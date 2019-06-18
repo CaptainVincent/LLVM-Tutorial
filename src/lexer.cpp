@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string>
+#include "lexer.h"
 
 enum TokenType
 {
@@ -16,7 +17,7 @@ std::string IdentifierStr;
 double NumVal;
 
 
-static int gettok() {
+int gettok() {
     static int LastChar = ' ';
 
     // Skip any whitespace.
@@ -68,8 +69,4 @@ static int gettok() {
     int ThisChar = LastChar;
     LastChar = getchar();
     return ThisChar;
-}
-
-int main() {
-    return 0;
 }
